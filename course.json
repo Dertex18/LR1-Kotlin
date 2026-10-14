@@ -1,0 +1,1770 @@
+{
+  "course_version" : 1,
+  "summary" : "Лабораторна робота спрямована на практичне освоєння базового синтаксису та фундаментальних концепцій мови програмування Kotlin. Під час виконання завдань студенти навчаться оголошувати змінні (val, var), працювати з основними типами даних і рядковими шаблонами, а також застосовувати керуючі конструкції (if, when) та цикли (for, while) для побудови простої алгоритмічної логіки. Головна мета - отримати початкові навички написання, компіляції та перевірки працездатності коду в середовищі розробки.",
+  "title" : "Lab 1. Kotlin basics",
+  "programming_language_id" : "kotlin",
+  "language" : "uk",
+  "course_type" : "Marketplace",
+  "vendor" : {
+    "name" : "Mykola Hodovychenko"
+  },
+  "solutions_hidden" : true,
+  "items" : [
+    {
+      "id" : 612753902,
+      "title" : "Basic Syntax",
+      "task_list" : [
+        {
+          "id" : 873866127,
+          "name" : "Declaring an Immutable Variable (val)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin для оголошення змінних, які не можна змінити після ініціалізації, використовується ключове слово `val`.\nОголосіть незмінну змінну `language` типу `String` та присвойте їй значення \"Kotlin\". Поверніть цю змінну.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1504862100,
+          "name" : "Declaring a Mutable Variable (var)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Для змінних, значення яких може змінюватися, використовується ключове слово `var`.\nСтворіть змінну `counter` зі значенням 0. Потім збільште її значення на 5 і поверніть результат.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1435481202,
+          "name" : "Type Inference",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Компілятор Kotlin розумний і може самостійно виводити типи змінних. Тому вказувати тип явно не обов'язково.\nОголосіть змінну `version` (використайте `val`), присвойте їй дробове значення `1.9` без явного вказування типу `Double`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 732024241,
+          "name" : "Everything is an Object",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin немає класичних примітивних типів, як у Java (int, double тощо). Усі числа є об'єктами, у яких можна викликати методи.\nСтворіть число `10` і викличте у нього метод `.minus(3)`. Поверніть результат.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 123998997,
+          "name" : "Absence of Semicolons",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin крапки з комою (`;`) наприкінці рядка не є обов'язковими і зазвичай опускаються.\nНапишіть код, який оголошує дві змінні на різних рядках (`a = 5`, `b = 10`) без використання крапки з комою, та повертає їх суму.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1355322430,
+          "name" : "String Templates - Variables",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Рядкові шаблони дозволяють підставляти значення змінних прямо у рядок. Для цього використовується символ `$`.\nЗамініть конкатенацію рядків на використання рядкового шаблону, щоб повернути рядок \"Hello, [name]!\".",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 227094298,
+          "name" : "String Templates - Expressions",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Якщо вам потрібно підставити у рядок не просто змінну, а результат виконання виразу, візьміть вираз у фігурні дужки: `${вираз}`.\nПоверніть рядок \"2 + 2 = 4\", використовуючи обчислення всередині шаблону рядка.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 2076685716,
+          "name" : "String Templates - Object Properties",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Фігурні дужки `${}` також необхідні, коли ви звертаєтесь до властивості об'єкта чи його методу всередині рядка.\nДано рядок `text`. Поверніть рядок формату: \"Довжина рядка: [довжина]\", використовуючи властивість `.length`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 510926805,
+          "name" : "Type Safety",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin не можна змінити тип змінної після того, як він був визначений (явно чи через Type inference).\nЗмінна `score` (тип `Int`) вже оголошена. Створіть новий рядок за допомогою шаблону: \"Your score is [score]\", оскільки присвоїти рядок безпосередньо у змінну `score` не можна.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1311018832,
+          "name" : "Combined Task - Basic Syntax",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Об'єднаємо знання!\n1. Оголосіть незмінну змінну `item` зі значенням \"Laptop\".\n2. Оголосіть змінну `price` зі значенням `1000`.\n3. Застосуйте знижку: зменште ціну на `150`.\n4. Поверніть рядок формату: \"Price of Laptop is 850\" (використовуючи змінні).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        }
+      ],
+      "type" : "lesson"
+    },
+    {
+      "id" : 1504881330,
+      "title" : "Type System and Null Safety",
+      "task_list" : [
+        {
+          "id" : 1678024759,
+          "name" : "Non-Nullable Types",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin за замовчуванням усі типи є Non-Nullable (не можуть приймати значення `null`). Це захищає програму від `NullPointerException`.\nРеалізуйте функцію, яка приймає рядок `text` (гарантовано не `null`) і повертає його довжину.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 870685954,
+          "name" : "Nullable Types",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Щоб дозволити змінній зберігати значення `null`, до її типу потрібно додати знак питання (наприклад, `String?`).\nЗмініть тип повернення функції на Nullable рядок і поверніть `null`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1834809762,
+          "name" : "Safe Call Operator",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Якщо ви спробуєте викликати метод у змінної типу `String?`, компілятор видасть помилку. Щоб зробити це безпечно, використовуйте оператор `?.`. Він поверне результат, якщо об'єкт не `null`, або `null`, якщо об'єкт дорівнює `null`.\nОтримайте довжину переданого Nullable рядка за допомогою `?.`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1504008188,
+          "name" : "Elvis Operator",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Елвіс-оператор `?:` дозволяє задати значення за замовчуванням на випадок, якщо лівий вираз дорівнює `null`.\nПоверніть переданий рядок `text`, а якщо він `null` — поверніть рядок `\"Default\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 388415091,
+          "name" : "Combining Safe Call and Elvis Operators",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Оператори `?.` та `?:` часто використовуються разом.\nЗнайдіть довжину Nullable рядка `text`. Якщо рядок дорівнює `null`, його довжина має вважатися рівною `0`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 801281653,
+          "name" : "Not-Null Assertion Operator",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Оператор `!!` (Not-null assertion) перетворює Nullable тип у Non-Nullable. Якщо змінна дорівнює `null`, програма викине `NullPointerException`. Використовуйте його лише тоді, коли впевнені на 100%, що значення не `null`.\nВикличте властивість `.length` у рядка `text`, примусово вказавши компілятору, що він не `null`, за допомогою `!!`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1272671208,
+          "name" : "Smart Casts",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Якщо ви перевірите змінну на `null` за допомогою `if (text != null)`, компілятор Kotlin автоматично \"згадає\" це (Smart Cast) і дозволить використовувати змінну як Non-Nullable всередині блоку `if`.\nДопишіть код: перевірте `text` на `null`, і якщо він не `null` — поверніть рядок у верхньому регістрі (метод `.uppercase()`). Інакше поверніть `\"EMPTY\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 196377527,
+          "name" : "Safe Call Chains",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Ви можете використовувати кілька операторів `?.` підряд, якщо працюєте з вкладеними об'єктами або методами, що повертають `null`.\nДано об'єкт класу `User` (який може бути `null`), що має властивість `name` (яка теж може бути `null`).\nПоверніть довжину імені користувача, або `null`, використовуючи ланцюжок викликів `?.`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 570666648,
+          "name" : "Elvis Operator for Throwing Exceptions",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Елвіс-оператор `?:` можна використовувати не тільки для значень за замовчуванням, але й для переривання виконання функції (наприклад, використовуючи `throw` або `return`).\nЗа допомогою `?:` поверніть рядок `text`, а якщо він `null` — викиньте виняток `IllegalArgumentException()`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1564784508,
+          "name" : "Combined Task - Null Safety",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Об'єднаємо всі отримані знання в одну логічну задачу!\nНапишіть функцію, яка приймає `String?` (ім'я користувача) і генерує привітання.\n1. Якщо `name` дорівнює `null`, використайте значення за замовчуванням `\"Guest\"`.\n2. Якщо ім'я не `null`, але воно порожнє (`.isEmpty()`), поверніть `\"Guest\"`. *Підказка: метод `.takeIf { it.isNotEmpty() }` дуже допоможе, або використовуйте `if-else`*.\n3. Поверніть фінальний рядок: `\"Welcome, [Name]!\"`.\n\nВикористайте комбінацію безпечних операторів та рядкових шаблонів, розглянутих у попередньому розділі.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        }
+      ],
+      "type" : "lesson"
+    },
+    {
+      "id" : 373264353,
+      "title" : "Control Flow",
+      "task_list" : [
+        {
+          "id" : 938150732,
+          "name" : "if as an Expression",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin конструкція `if` є виразом, тобто вона може повертати значення. Це дозволяє привласнювати результат змінній або повертати його з функції без використання додаткових змінних.\nНапишіть функцію, яка приймає два числа (`a` та `b`) і повертає більше з них, використовуючи `if` як вираз.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 972611040,
+          "name" : "Absence of Ternary Operator",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin немає класичного тернарного оператора (`умова ? a : b`), оскільки його роль ідеально виконує `if-else` в один рядок.\nНапишіть функцію, яка перевіряє, чи є число `number` парним (`number % 2 == 0`). Якщо так, поверніть рядок `\"Even\"`, якщо ні — `\"Odd\"`. Напишіть це в один рядок за допомогою `if-else`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 386871469,
+          "name" : "Basic when as a switch replacement",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Конструкція `when` у Kotlin є потужною альтернативою оператору `switch` з інших мов. Для гілки за замовчуванням використовується ключове слово `else`.\nНапишіть функцію, яка приймає число `n` від 1 до 3 і друкує (повертає) його текстове представлення: `\"One\"`, `\"Two\"`, `\"Three\"`. Для всіх інших чисел повертайте `\"Unknown\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 719934531,
+          "name" : "when as an Expression",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Так само як і `if`, `when` може бути виразом, що повертає значення. У такому випадку гілка `else` зазвичай є обов'язковою, щоб компілятор був впевнений, що значення завжди буде повернуто.\nСпростіть попередню логіку: поверніть результат виконання `when` безпосередньо. Реалізуйте логіку світлофора: `\"Red\"` -> `\"Stop\"`, `\"Yellow\"` -> `\"Wait\"`, `\"Green\"` -> `\"Go\"`, для всього іншого -> `\"Error\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 243266758,
+          "name" : "when with Type Checking (is)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "За допомогою `when` можна перевіряти типи об'єктів (оператор `is`). Завдяки механізму Smart Cast, після перевірки типу об'єкт автоматично приводиться до нього.\nФункція приймає об'єкт типу `Any`.\n- Якщо це `String`, поверніть його довжину.\n- Якщо це `Int`, поверніть число, помножене на 2.\n- В інших випадках поверніть 0.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1136353604,
+          "name" : "for Loop and Basic Ranges",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Цикл `for` у Kotlin використовується для ітерації по всьому, що надає ітератор, зокрема по діапазонах (Ranges). Діапазон `1..5` включає обидва кінці.\nНапишіть функцію, яка за допомогою циклу `for` рахує суму чисел від 1 до `n` (включно).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 2015599434,
+          "name" : "for Loop with until and step",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Якщо вам потрібен діапазон, що **не включає** останній елемент, використовуйте `until`. Щоб змінити крок ітерації, додайте `step`.\nЗнайдіть суму парних чисел від 0 до `n` (але не включаючи саме `n`), використовуючи `0 until n step 2`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 2072205195,
+          "name" : "Reverse Iteration with downTo",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Для створення діапазону у зворотному напрямку використовується ключове слово `downTo` (наприклад, `5 downTo 1`).\nСтворіть рядок зворотного відліку. Функція приймає число `start`. За допомогою циклу додавайте числа у рядок і поверніть його. Формат має бути: `\"5 4 3 2 1 \"` (з пробілами після кожного числа).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 457270667,
+          "name" : "when with Ranges (in)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Конструкція `when` відмінно працює з діапазонами. Замість написання довгих `if-else` ви можете перевіряти, чи входить число у діапазон за допомогою оператора `in`.\nПереведіть бали студента `score` у шкільну оцінку (String):\n- від 90 до 100 -> `\"A\"`\n- від 80 до 89 -> `\"B\"`\n- від 70 до 79 -> `\"C\"`\n- все інше -> `\"F\"`",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1356205274,
+          "name" : "Combined Task - Control Flow",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Об'єднаємо вивчені інструменти: цикли, `when` як вираз, та діапазони!\nКласична задача \"FizzBuzz\".\nНапишіть функцію, яка ітерується від 1 до `n` (включно). Всередині циклу вона формує фінальний рядок-результат (додаючи пробіл після кожного елемента).\nПравила для кожного числа:\n- Якщо воно ділиться і на 3, і на 5 (тобто на 15) — додаємо `\"FizzBuzz \"`.\n- Якщо тільки на 3 — `\"Fizz \"`.\n- Якщо тільки на 5 — `\"Buzz \"`.\n- В інших випадках — саме число: `\"$i \"`.\n\n*Підказка:* Використовуйте `when` без аргументу `when { умова -> ... }` всередині циклу `for`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        }
+      ],
+      "type" : "lesson"
+    },
+    {
+      "id" : 1253994762,
+      "title" : "Functions",
+      "task_list" : [
+        {
+          "id" : 1490618134,
+          "name" : "Basic Function Declaration",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin функції оголошуються за допомогою ключового слова `fun`. Тип значення, що повертається, вказується після списку параметрів через двокрапку.\nНапишіть функцію `getGreeting`, яка не приймає жодних аргументів і повертає рядок `\"Hello, Kotlin!\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 40732472,
+          "name" : "Function with Arguments",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Параметри функції вказуються у форматі `ім'я: Тип`.\nСтворіть функцію `multiply`, яка приймає два цілих числа (`a` типу `Int` та `b` типу `Int`) і повертає їх добуток (теж `Int`).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 836273364,
+          "name" : "Single-Expression Functions",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Якщо функція складається лише з одного виразу, фігурні дужки `{}` та ключове слово `return` можна опустити, використовуючи знак дорівнює `=`. Тип повернення компілятор виведе автоматично.\nПерепишіть функцію обчислення квадрата числа у вигляді single-expression функції.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1082328900,
+          "name" : "if in Single-Expression Functions",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Оскільки `if` у Kotlin є виразом, його дуже зручно використовувати у single-expression функціях.\nНапишіть функцію `minOf(a: Int, b: Int)`, яка повертає менше з двох чисел, використовуючи синтаксис з `=` та вираз `if-else`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 511128757,
+          "name" : "Default Parameters",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin можна задавати значення аргументів за замовчуванням. Це дозволяє викликати функцію, не передаючи всі параметри.\nДодайте до параметра `name` значення за замовчуванням `\"Guest\"`, щоб код компілювався при виклику без аргументів.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1152541471,
+          "name" : "Multiple Default Parameters",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Ви можете комбінувати обов'язкові параметри та параметри за замовчуванням. Зазвичай параметри за замовчуванням ставлять у кінці списку.\nСтворіть функцію `buildMessage`, яка приймає:\n1. `text: String` (обов'язковий)\n2. `level: String` (за замовчуванням `\"INFO\"`)\n   Поверніть рядок у форматі: `\"[level] text\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1261109838,
+          "name" : "Named Arguments",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "При виклику функції ви можете явно вказувати імена аргументів. Це дозволяє передавати їх у будь-якому порядку та підвищує читабельність коду.\nФункція `formatDate` вже реалізована. Викличте її всередині `callFormatDate`, передавши аргументи в такому порядку: `year = 2025`, `month = \"October\"`, `day = 10`, використовуючи іменовані аргументи.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 126510953,
+          "name" : "Named Arguments and Default Parameters",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Іменовані аргументи дозволяють пропустити параметри за замовчуванням усередині списку і передати значення лише для тих, які знаходяться далі.\nФункція `createWindow` приймає ширину, висоту та заголовок. Викличте її, залишивши `width` та `height` за замовчуванням, але змінивши `title` на `\"My App\"` за допомогою іменованого аргумента.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 55384045,
+          "name" : "Replacing Method Overloading",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Java для обчислення об'єму куба (1 параметр) і паралелепіпеда (3 параметри) довелося б писати два різних методи (перевантаження). У Kotlin достатньо однієї функції.\nНапишіть функцію `volume`, яка приймає `length`. Параметри `width` та `height` повинні за замовчуванням дорівнювати `length`. Функція має повертати `length * width * height`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 901063747,
+          "name" : "Combined Task - Functions",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Об'єднаємо single-expression функції, параметри за замовчуванням та іменовані аргументи!\n1. Створіть single-expression функцію `formatUser`, яка приймає:\n  - `login: String`\n  - `domain: String` (за замовчуванням `\"example.com\"`)\n  - `isActive: Boolean` (за замовчуванням `true`)\n    Вона має повертати рядок: `\"[login@domain] - Active: isActive\"`.\n2. У функції `testUser` викличте `formatUser`, передавши `login = \"admin\"` та вказавши `isActive = false` через іменований аргумент (пропустивши `domain`).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        }
+      ],
+      "type" : "lesson"
+    },
+    {
+      "id" : 2016976090,
+      "title" : "Object-Oriented Programming in Kotlin",
+      "task_list" : [
+        {
+          "id" : 295245254,
+          "name" : "Classes and Primary Constructor",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin первинний конструктор оголошується прямо в заголовку класу. Якщо ви додасте `val` або `var` перед параметрами конструктора, вони автоматично стануть властивостями класу.\nСтворіть клас `Student`, який має первинний конструктор із двома властивостями: `name` (типу `String`, незмінна `val`) та `age` (типу `Int`, змінна `var`).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 768211403,
+          "name" : "Initialization Block (init)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Оскільки первинний конструктор не може містити коду, уся логіка ініціалізації (наприклад, перевірка вхідних даних) поміщається в блок `init`.\nКлас `Product` приймає ціну (`price`). Додайте блок `init`, який перевіряє: якщо `price` менше нуля, викиньте виняток `IllegalArgumentException`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1991144407,
+          "name" : "Secondary Constructor",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Клас може мати вторинні конструктори, визначені за допомогою ключового слова `constructor`. Кожен вторинний конструктор зобов'язаний викликати первинний (через `this`).\nКлас `Rectangle` має первинний конструктор, що приймає `width` і `height`. Створіть вторинний конструктор, який приймає лише один параметр `size: Int` (для створення квадрата) і делегує виклик первинному конструктору, передаючи `size` для обох сторін.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1511222971,
+          "name" : "Properties and Custom Getter",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin під капотом властивостей автоматично генеруються гетери (а для `var` — ще й сетери). Ви можете змінити стандартну поведінку, написавши кастомний гетер.\nДодайте до класу `Circle` властивість `area` (типу `Double`), яка обчислюється автоматично під час звернення (кастомний `get() = ...`). Формула: `3.14 * radius * radius`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 284919154,
+          "name" : "Custom Setter and Backing Field",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Щоб змінити логіку присвоєння значення змінній `var`, можна написати кастомний сетер. Усередині сетера для доступу до реального значення в пам'яті використовується ключове слово `field` (Backing Field), інакше виникне нескінченна рекурсія.\nДодайте кастомний сетер для властивості `balance`. Якщо нове значення (`value`) менше нуля, залишайте старе значення (нічого не робіть). Інакше — оновлюйте `field`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1749692412,
+          "name" : "Data Classes",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "`data class` створений спеціально для зберігання даних. Компілятор автоматично генерує для нього методи `equals()`, `hashCode()`, і `toString()`, орієнтуючись на властивості у первинному конструкторі.\nПеретворіть звичайний клас `User` на `data class`. Після цього два об'єкти з однаковими даними будуть вважатися рівними при використанні `==`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1774740888,
+          "name" : "The copy Method in Data Classes",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Data-класи зазвичай роблять незмінними (всі властивості `val`). Для створення зміненої копії об'єкта використовується автоматично згенерований метод `copy()`.\nДано об'єкт `book`. Створіть і поверніть його копію, але замініть `price` на `150`, використовуючи іменований аргумент у методі `copy()`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 588409381,
+          "name" : "Sealed Classes",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "`sealed class` (ізольований клас) дозволяє створити сувору ієрархію. Усі спадкоємці такого класу повинні бути оголошені в тому ж пакеті. Це робить використання `when` вичерпним (без необхідності гілки `else`).\nОголосіть `sealed class NetworkResult`. Створіть у ньому два вкладені data-класи, які його наслідують: `Success` (має `val data: String`) та `Error` (має `val errorMsg: String`).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 705553156,
+          "name" : "Working with Sealed Classes and when",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Використаємо створену ієрархію! Коли ви перевіряєте об'єкт типу `sealed class` за допомогою `when`, компілятор змушує вас обробити всі можливі варіанти.\nНапишіть функцію `processResult`, яка приймає `NetworkResult` і за допомогою `when` повертає:\n- \"Дані: [data]\", якщо це `Success`\n- \"Помилка: [errorMsg]\", якщо це `Error`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1802383296,
+          "name" : "Combined Task - Object-Oriented Programming",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Об'єднаємо класи, кастомні властивості та `init`!\nСтворіть звичайний клас `Worker` з властивостями `name` (String) та `hourlyRate` (Int).\n1. У блоці `init` перевірте, що ставка `hourlyRate` більше 0, інакше викиньте `IllegalArgumentException`.\n2. Додайте змінну властивість (var) `hoursWorked: Int`, яка ініціалізується нулем. Встановіть їй кастомний сетер: нове значення записується у `field` тільки якщо воно >= 0.\n3. Додайте властивість `val salary: Int` з кастомним гетером, що повертає добуток `hourlyRate * hoursWorked`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        }
+      ],
+      "type" : "lesson"
+    },
+    {
+      "id" : 2119648075,
+      "title" : "Collections and Extension Functions",
+      "task_list" : [
+        {
+          "id" : 474960627,
+          "name" : "Immutable Collections (List)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "У Kotlin стандартний інтерфейс `List` представляє незмінну колекцію (read-only). Ви не можете додавати або видаляти елементи після її створення. Для створення такого списку використовується функція `listOf()`.\nСтворіть незмінний список із трьох рядків: `\"Apple\"`, `\"Banana\"`, `\"Orange\"` і поверніть його.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 454651102,
+          "name" : "Mutable Collections (MutableList)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Якщо вам потрібно змінювати колекцію (додавати, видаляти елементи), використовуйте `MutableList` та функцію `mutableListOf()`.\nДано функцію, яка приймає список чисел. Створіть змінний список, що містить числа `1` та `2`. Додайте до нього число `3` за допомогою методу `.add()` і поверніть цей список.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 974879485,
+          "name" : "Safe Collection Type Casting",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Хорошою практикою в Kotlin є створення змінного списку всередині функції для обробки даних, але повернення його назовні як незмінного `List`, щоб уникнути небажаних модифікацій.\nЗмініть тип повернення функції з `MutableList<String>` на `List<String>`. Сама функція повертає `MutableList`, але завдяки поліморфізму він буде безпечно приведений до `List`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 4934219,
+          "name" : "Extension Functions",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Функції-розширення дозволяють додавати нові методи до існуючих класів (навіть стандартних типу `String` чи `Int`) без їх успадкування. Синтаксис: `fun Тип.назваФункції()`. Усередині функції ключове слово `this` вказує на поточний об'єкт.\nНапишіть функцію-розширення `removeSpaces()` для класу `String`, яка замінює всі пробіли на порожні рядки (використайте метод `.replace(\" \", \"\")`).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1009080534,
+          "name" : "Extension Functions for Collections",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Ви можете створювати розширення навіть для колекцій із конкретним типом (Generics).\nНапишіть функцію-розширення `sumOdd()` для `List<Int>`, яка підраховує і повертає суму лише непарних чисел у списку. Використайте цикл `for (item in this)`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1856409498,
+          "name" : "Iteration using forEach",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Замість циклу `for` у Kotlin часто використовують лямбда-вирази та функцію `forEach`. Усередині лямбди поточний елемент колекції доступний під неявним ім'ям `it`.\nДано список імен. Використайте `names.forEach { ... }`, щоб додати до змінної `result` кожне ім'я та кому з пробілом (наприклад, `it + \", \"`).",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 388559436,
+          "name" : "Filtering Collections (filter)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Функція `filter` створює та повертає новий список, що містить лише ті елементи, які задовольняють умову в лямбді (тобто умова повертає `true`).\nВідфільтруйте переданий список `numbers`, залишивши лише числа, які строго більші за `10`. Поверніть отриманий список.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 492184702,
+          "name" : "Transforming Collections (map)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Функція `map` перетворює кожен елемент колекції за заданим правилом і повертає новий список із трансформованими елементами.\nПередано список рядків `words`. Перетворіть його на список чисел (довжин цих рядків) за допомогою `map { it.length }`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1496820419,
+          "name" : "Collection Call Chains",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Функції `filter` та `map` (як і багато інших) повертають нові колекції, що дозволяє об'єднувати їх у ланцюжки (chaining).\nДано список чисел `numbers`. Спочатку відфільтруйте лише додатні числа (більші за 0), а потім помножте кожне з них на 2 (використайте `map`). Поверніть фінальний список.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1734438892,
+          "name" : "Combined Task - Collections and Extensions",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "Поєднаємо функції-розширення, колекції та лямбди!\nНапишіть функцію-розширення `List<String>.getImportantWords()`.\nЦя функція повинна:\n1. Відфільтрувати слова, які починаються з великої літери `\"K\"` (використайте `it.startsWith(\"K\")`).\n2. Перетворити ці слова у верхній регістр (використайте `map` та `it.uppercase()`).\n3. Повернути отриманий `List<String>`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        }
+      ],
+      "type" : "lesson"
+    },
+    {
+      "id" : 450906552,
+      "title" : "Kotlin Syntax for Jetpack Compose",
+      "task_list" : [
+        {
+          "id" : 812028133,
+          "name" : "Top-Level Functions and PascalCase Convention",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Функції з великої літери\nУ класичній Java будь-який код має знаходитися всередині класу. Коли ми створюємо UI-компонент у Java, ми зазвичай створюємо екземпляр класу (наприклад, `TextView text = new TextView(context)`).\n\nУ сучасному декларативному UI на Kotlin компоненти — це не об'єкти з життєвим циклом, а **звичайні функції верхнього рівня** (Top-level functions), які просто описують, як має виглядати інтерфейс.\n\nЩоб візуально відрізняти функції, які малюють UI, від звичайних функцій бізнес-логіки, розробники домовилися використовувати конвенцію **PascalCase** (назва з великої літери). Хоча технічно це функція, візуально вона виглядає як оголошення класу, що спрощує читання ієрархії.\n\n**Ваше завдання:**\nСтворіть функцію верхнього рівня `Text`, яка приймає параметр `text` типу `String`. Функція повинна повертати рядок у форматі `\"[Text: <переданий_текст>]\"`. Зверніть увагу, що назва функції починається з великої літери.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 924079395,
+          "name" : "Object Instantiation Without the new Keyword",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Створення об'єктів без `new`\nДля Java-розробника виклик `new Button()` є чітким сигналом виділення пам'яті під новий об'єкт. У Kotlin розробники мови вирішили, що слово `new` є зайвим візуальним шумом.\n\nВиклик конструктора класу в Kotlin виглядає абсолютно так само, як і виклик звичайної функції: `Button()`. Це робить код більш лаконічним і стирає візуальну різницю між створенням об'єкта та викликом функції-компонента.\n\n**Ваше завдання:**\nУ коді нижче оголошено звичайний клас `Modifier`. Ваша мета — створити екземпляр цього класу і передати його у функцію `Box()`. Зробіть це **без** використання ключового слова `new`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1979513030,
+          "name" : "Named Arguments as an Alternative to the Builder Pattern",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Іменовані аргументи (Named Arguments)\nКоли клас або метод у Java приймає 5-10 параметрів (особливо однакового типу), виклик перетворюється на незрозумілий набір значень: `new Text(\"Title\", 24, \"Black\", true)`. Щоб вирішити це, у Java часто пишуть громіздкі класи-Builder'и (`TextBuilder().text(\"Title\").size(24)...`).\n\nУ Kotlin цю проблему вирішено на рівні мови. Ви можете явно вказувати імена параметрів під час виклику функції: `Text(text = \"Title\", fontSize = 24)`. Це робить код самодокументованим і повністю усуває потребу в патерні Builder.\n\n**Ваше завдання:**\nФункція `MyText` приймає три параметри, два з яких мають значення за замовчуванням. Викличте її, явно вказавши імена переданих аргументів: `text` зі значенням `\"Compose\"` та `fontSize` зі значенням `24`. Параметр `color` пропустіть.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1638033957,
+          "name" : "Changing the Order of Arguments",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Гнучкість порядку параметрів\nЩе одна перевага іменованих аргументів полягає в тому, що вони відв'язують вас від того порядку, у якому параметри були оголошені автором функції.\n\nЯкщо ви використовуєте імена параметрів, компілятор сам зрозуміє, яке значення куди підставити. Це особливо зручно, коли ви читаєте або пишете декларативний код — ви можете розмістити найважливіші для вас параметри (наприклад, обробник кліку) на початку або в кінці виклику.\n\n**Ваше завдання:**\nОголошено функцію `MyButton`, яка спочатку приймає рядок `onClick`, а потім булеве значення `enabled`. Викличте цю функцію, але передайте аргументи у зворотному порядку: спочатку `enabled = false`, а потім `onClick = \"Action\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1428343651,
+          "name" : "Default Parameters Instead of Method Overloading",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Значення за замовчуванням\nУ Java, якщо ви хочете надати користувачеві можливість викликати метод із різною кількістю аргументів, вам доводиться писати безліч перевантажених версій цього методу (Method Overloading). Це роздуває кодову базу.\n\nУ Kotlin параметри можуть мати значення за замовчуванням. Завдяки цьому одна функція `Icon` може замінити десяток перевантажених методів. Ви просто вказуєте лише ті параметри, які відрізняються від стандартних.\n\n**Ваше завдання:**\nВикличте функцію `Icon`. З її чотирьох параметрів вам потрібно передати лише два: `iconId` зі значенням `101` та `contentDescription` зі значенням `\"Search\"`. Використовуйте іменовані аргументи для `contentDescription`, щоб \"перестрибнути\" через інші параметри.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 452726387,
+          "name" : "Trailing Lambdas",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Винесення лямбди за дужки\nЦе **найважливіше синтаксичне правило**, яке робить декларативний UI можливим у Kotlin.\n\nУ Java лямбда-вираз завжди передається всередині круглих дужок методу: `button.setOnClickListener(v -> { ... })`.\nУ Kotlin діє правило: **якщо лямбда-вираз є останнім параметром функції, його можна (і наполегливо рекомендується) винести за межі круглих дужок**.\n\nТобто `Row(modifier, { ... })` перетворюється на `Row(modifier) { ... }`. Це робить код схожим на вбудовані конструкції мови (як `if` чи `while`).\n\n**Ваше завдання:**\nВикличте функцію `Row`. Передайте перший аргумент `modifier` (рядок `\"Fill\"`) всередині круглих дужок. Лямбду `content` винесіть за дужки у фігурних дужках `{}`. Всередині лямбди поверніть рядок `\"Child\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1893108848,
+          "name" : "Combining Named Arguments and Trailing Lambdas",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Комбінація синтаксису\nДекларативні компоненти часто приймають обробники подій (наприклад, `onClick`) та контент, який вони повинні відображати. Щоб зробити код кристально чистим, розробники комбінують іменовані аргументи в круглих дужках та лямбду контенту за їх межами.\n\nЗамість того, щоб писати `Button(\"Submit\", { \"Text inside\" })`, ми пишемо `Button(onClick = \"Submit\") { \"Text inside\" }`. Круглі дужки конфігурують компонент, а фігурні — наповнюють його.\n\n**Ваше завдання:**\nВикличте функцію `Button`. Використайте іменований аргумент `onClick = \"Submit\"` у круглих дужках. Фігурні дужки з лямбдою винесіть назовні, всередині неї поверніть рядок `\"Text inside\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 827776845,
+          "name" : "Omitting Parentheses Completely",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Опускання ()\nЛогічне продовження попереднього правила. Якщо функція приймає **тільки один аргумент** (і це лямбда), ми можемо винести її за дужки. Але тоді круглі дужки залишаються порожніми: `Column() { ... }`.\n\nЩоб не засмічувати код, Kotlin дозволяє повністю видалити порожні круглі дужки. В результаті виклик функції стає таким: `Column { ... }`. Це виглядає як структура самої мови, створюючи елегантний Domain-Specific Language (DSL).\n\n**Ваше завдання:**\nФункція `Column` приймає лише один аргумент — лямбду `content`. Викличте її, не використовуючи круглі дужки взагалі. Усередині фігурних дужок поверніть рядок `\"Item\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1122166240,
+          "name" : "Building Nested Tree Structures",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Деревоподібний код без зайвого шуму\nКоли ми прибираємо круглі дужки з компонентів, що є контейнерами для інших компонентів, ми отримуємо чисту ієрархію дерева. Це кардинально відрізняється від Java, де вкладеність вимагала б створення об'єктів та виклику методів `addView()`.\n\nЗавдяки синтаксису Kotlin структура коду повністю відповідає візуальній структурі UI: батьківський блок містить фігурні дужки, в яких лежать дочірні блоки.\n\n**Ваше завдання:**\nСтворіть вкладену структуру. Викличте контейнер `Column` (без дужок). Всередині його лямбди викличте контейнер `Row` (без дужок). А вже всередині лямбди `Row` поверніть рядок `\"Text\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1239064816,
+          "name" : "The Implicit it Parameter",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Ключове слово `it`\nУ Java, створюючи лямбду з одним аргументом, ви зобов'язані придумати йому ім'я: `value -> System.out.println(value)`. Часто це призводить до створення коротких безглуздих назв типу `v`, `e`, `it`.\n\nKotlin вирішив автоматизувати цей процес. Якщо лямбда-вираз має рівно один параметр, ви можете взагалі його не оголошувати. Компілятор автоматично надасть доступ до цього значення через ключове слово `it` (вбудоване ім'я параметра). Це робить короткі обробники дуже лаконічними.\n\n**Ваше завдання:**\nФункція `ListItem` виконує передану лямбду, передаючи в неї число `42`. Викличте `ListItem` і всередині фігурних дужок просто поверніть форматований рядок `\"Item $it\"`. Не пишіть `x -> ...`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1349010444,
+          "name" : "Calling Methods on the it Parameter",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Робота з `it` як зі звичайним об'єктом\nЗмінна `it` — це повноцінний об'єкт, тип якого виводиться компілятором автоматично. Ви можете викликати його методи або звертатися до властивостей точно так само, як і до будь-якої іншої змінної.\n\nЦе дуже часто використовується в обробниках подій, де компонент передає в лямбду об'єкт стану або подію.\n\n**Ваше завдання:**\nФункція `clickable` генерує подію (рядок `\"click\"`) і передає її у вашу лямбду. Викличте `clickable { ... }`. Всередині лямбди зверніться до `it` та викличте метод рядка `.uppercase()`, щоб повернути результат великими літерами.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 840088788,
+          "name" : "Function Literals with Receiver (Scope)",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Контекст виконання (Scope)\nЦе одна з \"магічних\" особливостей Kotlin. Чому певні модифікатори вирівнювання (наприклад, `align`) можна викликати всередині `Row`, але компілятор забороняє їх викликати всередині `Column`?\n\nВідповідь — **лябмди з одержувачем**. Подивіться на тип аргументу функції: `RowScope.() -> String`. Це означає, що лямбда, яку ви передасте, буде виконуватися так, ніби вона є методом класу `RowScope`. Усі методи цього класу стають доступними всередині фігурних дужок без префіксів. Це дозволяє створювати безпечний та контекстно-залежний API.\n\n**Ваше завдання:**\nВикличте функцію `Row`. Всередині фігурних дужок у вас автоматично є доступ до методів `RowScope`. Просто викличте метод `align()` і поверніть його результат.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1100945680,
+          "name" : "Accessing Context via this",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Явний `this` у Scope\nОскільки лямбда виконується \"всередині\" об'єкта `Scope`, ключове слово `this` вказує саме на цей контекстний об'єкт.\n\nІноді вам потрібно явно послатися на цей Scope, щоб передати його в іншу функцію, або щоб розрізнити змінні з однаковими іменами (наприклад, коли властивість Scope має таке ж ім'я, як зовнішня змінна).\n\n**Ваше завдання:**\nФункція `Column` надає контекст `ColumnScope`. У цьому класі є властивість `name`. Викличте `Column { ... }` і поверніть значення цієї властивості, явно використовуючи `this.name`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 218251635,
+          "name" : "Method Isolation via Different Scopes",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Безпека типів в UI\nЗавдяки різним Scope розробники фреймворків можуть гарантувати, що ви не застосуєте горизонтальне вирівнювання у вертикальному списку, адже такі методи просто не будуть існувати в поточному контексті.\n\n- Метод `weight()` (заповнення доступної ширини) визначено тільки в `RowScope`.\n- Метод `gravity()` визначено тільки в `ColumnScope`.\n\n**Ваше завдання:**\nСтворіть рядок, об'єднавши результати двох викликів. Спочатку викличте `Row` і всередині нього поверніть виклик `weight()`. Потім додайте до результату (через оператор `+`) виклик `Column`, всередині якого поверніть `gravity()`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 536619872,
+          "name" : "Extension Properties for Numbers",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Як працює \"магія\" одиниць виміру\nКоли Java-розробник бачить код на кшталт `width = 16.dp`, перша думка — це вбудований синтаксис мови. Але це не так!\n\nKotlin дозволяє додавати не лише нові методи до існуючих класів (Extension Functions), але й нові **властивості** (Extension Properties). У даному випадку розробники просто додали властивість `dp` до стандартного класу цілих чисел `Int`. Значення самого числа доступне всередині гетера через ключове слово `this`.\n\n**Ваше завдання:**\nОголосіть властивість-розширення `dp` типу `String` для класу `Int`. У її гетері (`get()`) реалізуйте повернення рядка формату `\"[значення_числа]dp\"` (наприклад, `\"16dp\"`). Використовуйте `this`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 668229810,
+          "name" : "Extension Properties for Other Types",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Розширення для `Float`\nРозширення можна писати для будь-яких типів. Для розмірів шрифту часто використовуються числа з плаваючою крапкою (наприклад, `24.5f.sp`). Для цього створюється аналогічне розширення, але вже для класу `Float`.\n\nЦе потужний інструмент, який робить код декларативним: ми не викликаємо утилітарний метод `DensityConverter.toSp(24.5f)`, а пишемо розмір так, як ми вимовляємо його вголос.\n\n**Ваше завдання:**\nНапишіть властивість-розширення `sp` типу `String` для класу `Float`. Геттер повинен повертати рядок `\"${this}sp\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1097538978,
+          "name" : "Concept Synthesis - Extension Properties and Named Arguments",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Комбінування інструментів Kotlin\nТепер, коли ми розуміємо, як створюються такі зручні одиниці виміру, спробуємо використати їх на практиці разом з іменованими аргументами. Це класичний вигляд конфігурації відступів (Padding) у сучасному UI.\n\nВластивість `dp` вже реалізована в коді. Залишилося лише зробити правильний виклик.\n\n**Ваше завдання:**\nВикличте функцію `Padding`. Передайте їй параметр, явно вказавши його ім'я (`all`). Як значення, передайте число `16`, до якого застосовано властивість-розширення `.dp`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 2085506976,
+          "name" : "Concept Synthesis - Scopes and Trailing Lambdas",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Динамічні списки та їхні Scope\nУ складних компонентах, таких як ліниві списки, лямбда з одержувачем (Scope) дозволяє декларативно оголошувати, які елементи мають бути всередині.\n\nФункція `LazyColumn` надає контекст `LazyItemScope`, у якому є метод `item`. Цей метод, у свою чергу, також приймає лямбду з контентом. Звучить складно, але синтаксично виглядає як чистий і зрозумілий текст.\n\n**Ваше завдання:**\nВикличте `LazyColumn` без круглих дужок. Усередині лямбди ви автоматично отримаєте доступ до `LazyItemScope`. Викличте там метод `item` (також без круглих дужок), всередині лямбди якого поверніть рядок `\"Data\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 1584729643,
+          "name" : "Concept Synthesis - Named Arguments and Trailing Lambdas",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Конфігурація та наповнення контейнерів\nЦе стандартний патерн для будь-якого компонента-картки або контейнера. В круглих дужках ви налаштовуєте фізичні властивості (наприклад, тінь `elevation`), а у фігурних дужках — вміст.\n\nЯкщо параметр `elevation` має значення за замовчуванням, ми можемо його не передавати, але якщо хочемо змінити, іменований аргумент — ідеальний вибір.\n\n**Ваше завдання:**\nВикличте функцію `Card`. У круглих дужках вкажіть параметр `elevation = 4`. Лямбду винесіть за круглі дужки (Trailing Lambda), і всередині неї поверніть рядок `\"CardText\"`.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        },
+        {
+          "id" : 441163374,
+          "name" : "Final Boss - Mini-Framework",
+          "files" : {
+            "src/Task.kt" : {
+              "name" : "src/Task.kt",
+              "placeholders" : [ ],
+              "is_visible" : true,
+              "is_binary" : false
+            },
+            "test/Tests.kt" : {
+              "name" : "test/Tests.kt",
+              "placeholders" : [ ],
+              "is_visible" : false,
+              "is_binary" : false
+            }
+          },
+          "description_text" : "# Підсумок: Створення UI дерева\nВи пройшли шлях від розуміння базових функцій до концепцій Scope та іменованих аргументів. Тепер поєднаємо усе разом, щоб написати фрагмент коду, який виглядає на 100% як реальний декларативний UI на Kotlin.\n\nВаш код перестав бути набором викликів об'єктів (як у Java) і став справжньою мовою розмітки (DSL), залишаючись при цьому суворо типізованим та безпечним на етапі компіляції.\n\n**Ваше завдання:**\nПобудуйте та поверніть таку ієрархію UI:\n1. `Column` (як контейнер для всього, без круглих дужок). Усередині нього:\n2. `Button`, де в круглих дужках вказано `onClick = \"Save\"`. А в його фігурних дужках (Trailing Lambda):\n3. `Text` із переданим рядком `\"Save\"` у круглих дужках.",
+          "description_format" : "MD",
+          "task_type" : "edu"
+        }
+      ],
+      "type" : "lesson"
+    }
+  ],
+  "additional_files" : [
+    {
+      "name" : "build.gradle",
+      "is_visible" : false,
+      "is_binary" : false
+    },
+    {
+      "name" : "settings.gradle",
+      "is_visible" : false,
+      "is_binary" : false
+    },
+    {
+      "name" : "gradle/wrapper/gradle-wrapper.properties",
+      "is_visible" : false,
+      "is_binary" : false
+    },
+    {
+      "name" : "Lab_1__Kotlin_basics.zip",
+      "is_visible" : false,
+      "is_binary" : true
+    }
+  ],
+  "version" : 22,
+  "environment_settings" : {
+    "jvm_language_level" : "JDK_17"
+  },
+  "edu_plugin_version" : "2026.2-2025.3-626"
+}

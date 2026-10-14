@@ -1,0 +1,1 @@
+fun getNothing(): String? = null
